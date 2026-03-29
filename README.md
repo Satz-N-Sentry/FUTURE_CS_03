@@ -1,41 +1,43 @@
 FUTURE_CS_03 — API Security Risk Analysis Report
 SAIZERO — Ground Zero Defence
 Every shadow has a hunter 🐺
+![OWASP crAPI](https://img.shields.io/badge/Target-OWASP%20crAPI-blue?style=flat-square&logo=owasp)
+![API Security](https://img.shields.io/badge/Domain-API%20Security-critical?style=flat-square)
+![Postman](https://img.shields.io/badge/Tool-Postman-orange?style=flat-square&logo=postman)
+![MITRE ATT&CK](https://img.shields.io/badge/Framework-MITRE%20ATT%26CK-red?style=flat-square)
+![Future Interns](https://img.shields.io/badge/Program-Future%20Interns%202026-navy?style=flat-square)
+![Educational](https://img.shields.io/badge/Scope-Educational%20Only-green?style=flat-square)
 ---
 Overview
-This repository contains a professional API Security Risk Analysis conducted
-as part of the Future Interns Cybersecurity Internship 2026.
-The assessment targeted OWASP crAPI (Completely Ridiculous API) — an
-intentionally vulnerable API platform built by OWASP specifically for
-API security learning and testing.
-9 confirmed vulnerabilities were identified across 4 OWASP API Security
-Top 10 categories, with full CVE and MITRE ATT&CK framework mapping.
+This repository contains a professional API Security Risk Analysis conducted as part of the Future Interns Cybersecurity Internship 2026.
+The assessment targeted OWASP crAPI (Completely Ridiculous API) — an intentionally vulnerable API platform built by OWASP specifically for API security learning and testing.
+9 confirmed vulnerabilities were identified across 4 OWASP API Security Top 10 categories, with full CVE and MITRE ATT&CK framework mapping.
 ---
 Target API
 Field	Details
 Application	OWASP crAPI (Completely Ridiculous API)
-Base URL	http://localhost:8888
-Services	/identity, /community, /workshop
+Base URL	`http://localhost:8888`
+Services	`/identity`, `/community`, `/workshop`
 Auth Method	JWT Bearer Token (RS256)
 Assessment Type	Read-Only API Security Risk Analysis
 Scope	Local Docker deployment — Educational only
 ---
 Findings Summary
 #	Finding	OWASP	Severity
-01	JWT Token — Role in Payload + No MFA	API2:2023	HIGH
-02	Excessive Data Exposure — PII + Financial	API3:2023	MEDIUM
-03	BOLA — Vehicle GPS Location Leaked	API1:2023	CRITICAL
-04	No Rate Limiting on Login Endpoint	API4:2023	HIGH
-05	MFA Not Required — Single Factor Only	API2:2023	HIGH
-06	Missing Content-Security-Policy Header	API8:2023	HIGH
-07	CORS Wildcard (*) Misconfiguration	API8:2023	HIGH
-08	Server Version Disclosed	API8:2023	LOW
-09	Weak Email Change Token — No Expiry	API2:2023	HIGH
+01	JWT Token — Role in Payload + No MFA	API2:2023	🔴 HIGH
+02	Excessive Data Exposure — PII + Financial	API3:2023	🟠 MEDIUM
+03	BOLA — Vehicle GPS Location Leaked	API1:2023	🚨 CRITICAL
+04	No Rate Limiting on Login Endpoint	API4:2023	🔴 HIGH
+05	MFA Not Required — Single Factor Only	API2:2023	🔴 HIGH
+06	Missing Content-Security-Policy Header	API8:2023	🔴 HIGH
+07	CORS Wildcard (`*`) Misconfiguration	API8:2023	🔴 HIGH
+08	Server Version Disclosed	API8:2023	🟡 LOW
+09	Weak Email Change Token — No Expiry	API2:2023	🔴 HIGH
 ---
 Key Finding — BOLA (CRITICAL)
-```
-Endpoint: GET /identity/api/v2/vehicle/{uuid}/location
-Authorization: Bearer \[User A Token]
+```http
+GET /identity/api/v2/vehicle/{uuid}/location
+Authorization: Bearer [User A Token]
 
 Response 200 OK:
 {
@@ -48,9 +50,7 @@ Response 200 OK:
   "email": "usera@test.com"
 }
 ```
-Any authenticated user can retrieve the real-time GPS location of any
-other user by supplying their vehicle UUID. No ownership verification
-is performed. Physical safety risk — not just a data breach.
+Any authenticated user can retrieve the real-time GPS location of any other user by supplying their vehicle UUID. No ownership verification is performed. Physical safety risk — not just a data breach.
 ---
 CVE & MITRE ATT&CK References
 Finding	CVE	MITRE ATT&CK
@@ -76,7 +76,7 @@ GitHub	Repository hosting for submission
 ---
 Methodology
 Setup — Deploy crAPI via Docker, create two test accounts
-Reconnaisance — Map all API endpoints via documentation and DevTools
+Reconnaissance — Map all API endpoints via documentation and DevTools
 Authentication Testing — JWT analysis, brute force, MFA check
 Authorization Testing — BOLA via UUID manipulation across accounts
 Data Exposure — Response field analysis against minimum necessary
@@ -91,41 +91,34 @@ API1:2023 — Broken Object Level Authorization	✅ Found — CRITICAL
 API2:2023 — Broken Authentication	✅ Found — HIGH
 API3:2023 — Broken Object Property Level Auth	✅ Found — MEDIUM
 API4:2023 — Unrestricted Resource Consumption	✅ Found — HIGH
-API5:2023 — Broken Function Level Authorization	Not in scope
-API6:2023 — Unrestricted Access to Sensitive Flows	Not in scope
-API7:2023 — Server Side Request Forgery	Not in scope
-API8:2023 — Security Misconfiguration	✅ Found — HIGH/LOW
-API9:2023 — Improper Inventory Management	Not in scope
-API10:2023 — Unsafe Consumption of APIs	Not in scope
+API5:2023 — Broken Function Level Authorization	➖ Not in scope
+API6:2023 — Unrestricted Access to Sensitive Flows	➖ Not in scope
+API7:2023 — Server Side Request Forgery	➖ Not in scope
+API8:2023 — Security Misconfiguration	✅ Found — HIGH / LOW
+API9:2023 — Improper Inventory Management	➖ Not in scope
+API10:2023 — Unsafe Consumption of APIs	➖ Not in scope
 ---
 Repository Structure
 ```
-FUTURE\\\_CS\\\_03/
-├── evidence/FUTURE\\\_CS\\\_03\\\_Evidence
-
-
-
+FUTURE_CS_03/
+├── evidence/
+│   └── FUTURE_CS_03_Evidence/
 ├── screenshots/
-│   ├── finding\\\_01\\\_login\\\_token.png
-│   ├── finding\\\_02\\\_jwt\\\_decoded.png
-│   ├── finding\\\_03\\\_excessive\\\_data.png
-│   ├── finding\\\_04\\\_bola\\\_location.png
-│   ├── finding\\\_05\\\_no\\\_rate\\\_limit.png
-│   ├── finding\\\_06\\\_security\\\_headers.png
-│   ├── finding\\\_07\\\_cors\\\_wildcard.png
-│   ├── finding\\\_09\\\_mfa\\\_disabled.png
-│   └── finding\\\_10\\\_email\\\_token.png
+│   ├── finding_01_login_token.png
+│   ├── finding_02_jwt_decoded.png
+│   ├── finding_03_excessive_data.png
+│   ├── finding_04_bola_location.png
+│   ├── finding_05_no_rate_limit.png
+│   ├── finding_06_security_headers.png
+│   ├── finding_07_cors_wildcard.png
+│   ├── finding_09_mfa_disabled.png
+│   └── finding_10_email_token.png
 ├── reports/
-│   └── SAIZERO\\\_API\\\_Security\\\_Report.pdf
+│   └── SAIZERO_API_Security_Report.pdf
 └── README.md
-
 ```
-\---
-
-```
-
-\---
-
-## Assessor
-
-**Satheesh Nithiananthan** (CyberLycan)
+---
+Assessor
+Satheesh Nithiananthan (CyberLycan)
+SAIZERO — Ground Zero Defence
+github.com/Satz-N-Sentry
