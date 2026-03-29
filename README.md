@@ -117,7 +117,6 @@ FUTURE_CS_03/
 │   └── SAIZERO_API_Security_Report.pdf
 └── README.md
 ```
----
 Assessor
 Satheesh Nithiananthan (CyberLycan)
 SAIZERO — Ground Zero Defence
