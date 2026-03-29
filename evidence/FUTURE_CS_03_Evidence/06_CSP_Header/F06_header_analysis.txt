@@ -1,0 +1,10 @@
+=== Security Headers Analysis ===
+
+PRESENT:
+X-Content-Type-Options: nosniff
+Strict-Transport-Security: max-age=31536000 ; includeSubDomains
+X-Frame-Options: DENY
+
+MISSING / DISABLED:
+  ✗ Content-Security-Policy — MISSING
+X-XSS-Protection: 0

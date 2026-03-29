@@ -1,0 +1,53 @@
+╔══════════════════════════════════════════════════════╗
+║   SAIZERO — FUTURE_CS_03 Evidence Summary            ║
+╚══════════════════════════════════════════════════════╝
+
+Generated : Sunday 29 March 2026 04:20:11 PM +05
+Target    : http://localhost:8888
+Tester    : Satheesh Nithiananthan (CyberLycan)
+
+━━━ Files Collected ━━━
+
+  [4 files]  01_JWT_MFA
+             → F01_jwt_decoded_payload.json
+             → F01_login_headers.txt
+             → F01_login_response.json
+             → F01_summary.txt
+
+  [3 files]  02_Excessive_Data
+             → F02_dashboard_response.json
+             → F02_fields_analysis.txt
+             → F02_response_headers.txt
+
+  [2 files]  03_BOLA_GPS
+             → F03_usera_vehicles.json
+             → F03_uuid_discovered.txt
+
+  [1 files]  04_Rate_Limiting
+             → F04_brute_attempts.txt
+
+  [3 files]  05_MFA
+             → F05_login_userA.json
+             → F05_login_userb.json
+             → F05_mfa_summary.txt
+
+  [2 files]  06_CSP_Header
+             → F06_all_headers.txt
+             → F06_header_analysis.txt
+
+  [3 files]  07_CORS
+             → F07_cors_analysis.txt
+             → F07_cors_headers.txt
+             → F07_cors_response.json
+
+  [2 files]  08_Server_Version
+             → F08_server_analysis.txt
+             → F08_server_headers.txt
+
+  [3 files]  09_Email_Token
+             → F09_change_email_response.json
+             → F09_mailhog_messages.json
+             → F09_token_analysis.txt
+
+━━━ Total ━━━
+  24 evidence files collected

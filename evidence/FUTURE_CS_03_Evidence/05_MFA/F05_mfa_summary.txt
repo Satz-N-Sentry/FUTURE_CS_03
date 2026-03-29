@@ -1,0 +1,7 @@
+=== MFA Status Check — All Accounts ===
+File: FUTURE_CS_03_Evidence/05_MFA/F05_login_userA.json
+"mfaRequired":false
+
+File: FUTURE_CS_03_Evidence/05_MFA/F05_login_userb.json
+"mfaRequired":false
+

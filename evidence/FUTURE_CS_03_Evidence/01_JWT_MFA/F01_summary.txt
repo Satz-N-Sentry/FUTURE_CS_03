@@ -1,0 +1,5 @@
+=== mfaRequired field check ===
+"mfaRequired":false
+
+=== Role field in JWT ===
+NOT FOUND

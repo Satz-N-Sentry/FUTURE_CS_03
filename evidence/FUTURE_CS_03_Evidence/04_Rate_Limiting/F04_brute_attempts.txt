@@ -1,0 +1,15 @@
+=== Rate Limiting Test — 10 consecutive failed attempts ===
+Target: POST http://localhost:8888/identity/api/auth/login
+
+Attempt 1 | HTTP: 401 | Time: 0.014630s
+Attempt 2 | HTTP: 401 | Time: 0.014626s
+Attempt 3 | HTTP: 401 | Time: 0.015616s
+Attempt 4 | HTTP: 401 | Time: 0.016707s
+Attempt 5 | HTTP: 401 | Time: 0.013632s
+Attempt 6 | HTTP: 401 | Time: 0.026362s
+Attempt 7 | HTTP: 401 | Time: 0.018397s
+Attempt 8 | HTTP: 401 | Time: 0.048372s
+Attempt 9 | HTTP: 401 | Time: 0.013669s
+Attempt 10 | HTTP: 401 | Time: 0.015881s
+
+RESULT: No rate limiting detected — all 10 attempts returned 401 with no throttle

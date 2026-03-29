@@ -1,0 +1,10 @@
+=== CORS Test with Forged Origin ===
+Forged Origin: https://evil-attacker.com
+
+Access-Control Headers in Response:
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Access-Control-Allow-Origin: *
+
+HTTP Status:
+HTTP/1.1 404 
