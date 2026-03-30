@@ -4,7 +4,6 @@
 ![Domain](https://img.shields.io/badge/Domain-API%20Security-critical?style=flat-square)
 ![Tool](https://img.shields.io/badge/Tool-Postman-orange?style=flat-square&logo=postman)
 ![Framework](https://img.shields.io/badge/Framework-MITRE%20ATT%26CK-red?style=flat-square)
-![Program](https://img.shields.io/badge/Program-Future%20Interns%202026-darkblue?style=flat-square)
 
 9 vulnerabilities across 4 OWASP API Top 10 categories — all mapped to CVE and MITRE ATT&CK.
 
