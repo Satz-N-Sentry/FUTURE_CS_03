@@ -49,4 +49,4 @@ Authorization: Bearer [User A Token]
 
 ## Tags
 
-`APISecurity` `OWASP` `crAPI` `BOLA` `JWT` `Postman` `MITRE` `FutureInterns` `CyberSecurity`
+`APISecurity` `OWASP` `crAPI` `BOLA` `JWT` `Postman` `MITRE` `CyberSecurity`
